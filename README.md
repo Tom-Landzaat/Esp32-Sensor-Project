@@ -3,28 +3,28 @@ For my ENGR 103 Final Project I wanted to determine if there was a relationship 
 
 
 ```markdown
-Nokia 5510 LCD Display       ESP 32
-Pin1 (RST)                   GPIO2
-Pin2 (CE)                    GPIO15
-Pin3 (DC)                    GPIO4
-Pin4 (Din)                   GPIO23
-Pin5 (Clk)                   GPIO18
-Pin6 (Vcc)                   3.3V
-Pin7 (BL)                    GND
-Pin8 (GND)                   GND
+# Nokia 5510 LCD Display       # ESP 32
+Pin1 (RST)                     GPIO2
+Pin2 (CE)                      GPIO15
+Pin3 (DC)                      GPIO4
+Pin4 (Din)                     GPIO23
+Pin5 (Clk)                     GPIO18
+Pin6 (Vcc)                     3.3V
+Pin7 (BL)                      GND
+Pin8 (GND)                     GND
 
 
 LM75a Temperature Sensor      ESP 32
-Pin1 (Vcc)                  3.3V
-Pin2 (GND)                  GND
-Pin3 (SDA)                  GPIO21
-Pin4 (SCL)                  GPIO22
+Pin1 (Vcc)                    3.3V
+Pin2 (GND)                    GND
+Pin3 (SDA)                    GPIO21
+Pin4 (SCL)                    GPIO22
 
 
-Soil Moisture Sensor        ESP 32
-Pin1 (AO)                   GPIO36
-Pin3 (GND)                  GND
-Pin4(Vcc)                   3.3V
+Soil Moisture Sensor          ESP 32
+Pin1 (AO)                     GPIO36
+Pin3 (GND)                    GND
+Pin4(Vcc)                     3.3V
 ```
 
 
