@@ -3,7 +3,7 @@ For my ENGR 103 Final Project I wanted to determine if there was a relationship 
 
 
 ```markdown
-""Nokia 5510 LCD Display""       ""ESP 32""
+**Nokia 5510 LCD Display**       **ESP 32**
 Pin1 (RST)                     GPIO2
 Pin2 (CE)                      GPIO15
 Pin3 (DC)                      GPIO4
