@@ -14,7 +14,7 @@ Pin7 (BL)                    GND
 Pin8 (GND)                   GND
 
 
-LM75a Temperature Sensor    ESP 32
+LM75a Temperature Sensor      ESP 32
 Pin1 (Vcc)                  3.3V
 Pin2 (GND)                  GND
 Pin3 (SDA)                  GPIO21
