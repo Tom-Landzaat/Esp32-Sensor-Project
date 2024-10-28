@@ -3,7 +3,6 @@ For my ENGR 103 Final Project I wanted to determine if there was a relationship 
 
 
 ```markdown
-```plaintext
 Nokia 5510 LCD Display     ESP 32
 Pin1 (RST)                 GPIO2
 Pin2 (CE)                  GPIO15
@@ -27,5 +26,5 @@ Pin1 (AO)                 GPIO36
 Pin3 (GND)                GND
 Pin4(Vcc)                 3.3V
 ```
-```
+
 
