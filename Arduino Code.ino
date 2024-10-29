@@ -24,7 +24,8 @@ LM75A lm75a_sensor(false,  // A0 LM75A pin state (connected to ground = false)
                    false); // A2 LM75A pin state (connected to ground = false)
 // Equivalent to "LM75A lm75a_sensor;"
 
-void clocks(){//for displaying time since program started on external display
+/*for displaying time since program started on external display*/
+void clocks(){
   (hours < 10) ?display.print("0"):NULL;
   display.print(hours);
   display.print(":");
@@ -37,7 +38,8 @@ void clocks(){//for displaying time since program started on external display
   stepUp();
 }
 
-double ave10(double data[], double num) //function for calculating 10 minute average
+/*function for calculating 10 minute average*/
+double ave10(double data[], double num) 
 {
   double total = 0, ave10 = 0;
   for(int i = 0; i < 600; i++)
@@ -47,8 +49,8 @@ double ave10(double data[], double num) //function for calculating 10 minute ave
   ave10 = (total/num);
   return ave10;
 }
-
-double maxV(double val[]){ //function for calculating 10 minute max
+/*function for calculating 10 minute max*/
+double maxV(double val[]){ 
   double maxV = 0;
   for(int i = 0; i < 600; i++){
     (val[i] > maxV) ? maxV = val[i] : NULL;
@@ -56,7 +58,8 @@ double maxV(double val[]){ //function for calculating 10 minute max
   return maxV;
 }
 
-double minV(double val[]){ //function for calculating 10 minute min
+/*function for calculating 10 minute min*/
+double minV(double val[]){ 
   double minV = 100;
   for(int i = 0; i < 600; i++){
     (val[i] < minV && val[i] != 0) ? minV = val[i] : NULL;
@@ -64,12 +67,14 @@ double minV(double val[]){ //function for calculating 10 minute min
   return minV;
 }
 
-double AtoM(double input)//Analog signal to Moisutre in percent
+/*Analog signal to Moisutre in percent*/
+double AtoM(double input)
 {
   return (100 - ((input/4095.00) * 100));
 }
 
-double totalAve(double ave10[]){ //average over the 24 hour test period
+/*average over the 24 hour test period*/
+double totalAve(double ave10[]){ 
   double sum = 0, total = 0;
   int i = 0;
   for(i = 0; i < 144; i++){
@@ -133,10 +138,13 @@ void loop()
         display.display();
         i++;
       }
-    
-      if(Serial.available() > 0 || (time1 > (601000 * count))){//if 10 minutes have passed or user has entered something in the serial port, read the serial port
+      
+      /*if 10 minutes have passed or user has entered something in the serial port, read the serial port*/
+      if(Serial.available() > 0 || (time1 > (601000 * count))){
         char message = Serial.read();
-        if(time1 > ((601000 + (600000 * count)))){//if ten minutes have passed, store the average of the 10 minute period into a 24 hour average array
+        
+        /*if ten minutes have passed, store the average of the 10 minute period into a 24 hour average array*/
+        if(time1 > ((601000 + (600000 * count)))){
           totalSumT[count] = ave10(dataT, 600);
           totalSumM[count] = ave10(dataM, 600);
           count++; // increase count by 1 to delay another 10 mins
@@ -145,7 +153,9 @@ void loop()
 
         if(message == 'a'){
           Serial.println("Average: ---------------");
-          avgT = ave10(dataT, 600.00); //store average for the last 10 minutes in an average variable which gets printed
+
+          /*store average for the last 10 minutes in an average variable which gets printed*/
+          avgT = ave10(dataT, 600.00); 
           avgM = ave10(dataM, 600.00);
           Serial.print("Average: ");
           Serial.print(avgT);
@@ -154,7 +164,9 @@ void loop()
           Serial.print("Minimum: ");
           Serial.print(minV(dataT));
           Serial.print("\t");
-          Serial.println(minV(dataM));//print min/max values over the 10 minute period
+
+          /*print min/max values over the 10 minute period*/
+          Serial.println(minV(dataM));
           Serial.print("Maximum: ");
           Serial.print(maxV(dataT));
           Serial.print("\t");
@@ -169,7 +181,8 @@ void loop()
   }
 }
 
-void stepUp() {//used for the clock() when one value reaches 60 we want it to reset to 0 and add one to the superseding value
+/*used for the clock() when one value reaches 60 we want it to reset to 0 and add one to the superseding value*/
+void stepUp() {
   if(seconds < 60){
     seconds += 1;
   }
