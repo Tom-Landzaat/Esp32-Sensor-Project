@@ -24,7 +24,7 @@ Pin4 (SCL)                       GPIO22
 *Soil Moisture Sensor*          *ESP 32*
 Pin1 (AO)                        GPIO36
 Pin3 (GND)                       GND
-Pin4 (Vcc)                        3.3V
+Pin4 (Vcc)                       3.3V
 ```
 
 
